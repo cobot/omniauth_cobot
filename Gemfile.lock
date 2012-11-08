@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    omniauth_cobot (0.0.1)
+      omniauth
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    hashie (1.2.0)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    rack (1.4.1)
+    rake (0.9.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  omniauth_cobot!
+  rake
