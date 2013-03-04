@@ -1,4 +1,4 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in couch_potato.gemspec
+# Specify your gem's dependencies in omniauth_cobot.gemspec
 gemspec
