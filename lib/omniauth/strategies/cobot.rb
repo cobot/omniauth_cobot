@@ -5,8 +5,8 @@ module OmniAuth
     class Cobot < OmniAuth::Strategies::OAuth2
       option :client_options, {
         :site => 'https://www.cobot.me',
-        :authorize_url => 'https://www.cobot.me/oauth2/authorize',
-        :token_url => 'https://www.cobot.me/oauth2/access_token'
+        :authorize_url => 'https://www.cobot.me/oauth/authorize',
+        :token_url => 'https://www.cobot.me/oauth/access_token'
       }
 
       uid { raw_info['id'] }
