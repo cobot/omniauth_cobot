@@ -13,5 +13,6 @@ Add the following as an initializer:
 This gives you access to a variable `request.env['omniauth.auth']` in your authentication callback that looks like this:
 
 * `uid` - the id of the user
+* `credentials` - `{'token' => '<access token>'}`
 * `info` - `{'email' => '<user email>', 'picture' => '<url>'}`
 * `extra` - `{:raw_info => { "id": "<user id>", "email": "<email>", "picture": "<picture url>", "mac_addresses": ["<mac address>"...], "memberships": [{ "space_link": "<https://www.cobot.me/api/spaces/some-space>", "link": "<https://some-space.cobot.me/api/memberships/some-membership>" } ], "admin_of": [ { "space_link": "<https://www.cobot.me/api/spaces/some-space>", "name": "<admin name>" } ] }`
