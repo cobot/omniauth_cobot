@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.version     = OmniAuth::Cobot::VERSION
   s.platform    = Gem::Platform::RUBY
 
-  s.add_dependency 'omniauth-oauth2'
+  s.add_dependency 'omniauth-oauth2', '~>1.6.0'
 
   s.add_development_dependency 'rake'
 
