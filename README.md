@@ -4,13 +4,20 @@ This gem provides an [OmniAuth](https://github.com/intridea/omniauth) strategy f
 
 ### Rails
 
+Add the following to your Gemfile:
+
+````ruby
+gem 'omniauth_cobot'
+gem 'omniauth-rails_csrf_protection', '~>1.0.0'
+``
+
 Add the following as an initializer:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :cobot, '<client_id>', '<client_secret>', scope: 'read write'
 end
-```
+````
 
 To authenticate a user against Cobot, send them to `/auth/cobot`.
 
