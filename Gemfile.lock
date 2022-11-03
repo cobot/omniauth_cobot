@@ -1,12 +1,13 @@
 PATH
   remote: .
   specs:
-    omniauth_cobot (0.0.3)
+    omniauth_cobot (0.1.0)
       omniauth-oauth2 (~> 1.8.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    diff-lcs (1.5.0)
     faraday (2.6.0)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -32,6 +33,19 @@ GEM
     rack-protection (3.0.2)
       rack
     rake (13.0.1)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
     ruby2_keywords (0.0.5)
     snaky_hash (2.0.1)
       hashie
@@ -39,11 +53,13 @@ GEM
     version_gem (1.1.1)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   omniauth_cobot!
   rake
+  rspec (~> 3.12)
 
 BUNDLED WITH
-   1.16.1
+   2.3.20

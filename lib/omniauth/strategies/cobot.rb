@@ -9,6 +9,27 @@ module OmniAuth
         :token_url => 'https://www.cobot.me/oauth/access_token'
       }
 
+      def client
+        ::OAuth2::Client.new(
+          options.client_id, 
+          options.client_secret, 
+          deep_symbolize(
+            options.client_options.merge(
+              authorize_url: space_subdomain_authorize_url
+            )
+          )
+        )
+      end
+  
+      def space_subdomain_authorize_url
+        params = Rack::Utils.parse_nested_query(env['QUERY_STRING'])
+        if (subdomain = params['cobot_space_subdomain'])
+          options.client_options[:authorize_url].sub('www.', "#{subdomain}.")
+        else
+          options.client_options[:authorize_url]
+        end
+      end
+
       uid { raw_info['id'] }
 
       info do
