@@ -1,11 +1,16 @@
+# frozen_string_literal: true
+
 require 'bundler'
 Bundler::GemHelper.install_tasks
 
 require 'rspec/core/rake_task'
+require 'rubocop/rake_task'
 
-task default: [:spec]
+task default: %i[spec rubocop]
 
-desc "Run the specs."
+desc 'Run the specs.'
 RSpec::Core::RakeTask.new do |t|
-  t.pattern = "spec/**/*_spec.rb"
+  t.pattern = 'spec/**/*_spec.rb'
 end
+
+RuboCop::RakeTask.new(:rubocop)
