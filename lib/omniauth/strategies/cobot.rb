@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
     class Cobot < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        :site => 'https://www.cobot.me',
-        :authorize_url => 'https://www.cobot.me/oauth/authorize',
-        :token_url => 'https://www.cobot.me/oauth/access_token'
+        site: 'https://www.cobot.me',
+        authorize_url: 'https://www.cobot.me/oauth/authorize',
+        token_url: 'https://www.cobot.me/oauth/access_token'
       }
 
       def client
         ::OAuth2::Client.new(
-          options.client_id, 
-          options.client_secret, 
+          options.client_id,
+          options.client_secret,
           deep_symbolize(
             options.client_options.merge(
               authorize_url: space_subdomain_authorize_url
@@ -20,7 +22,7 @@ module OmniAuth
           )
         )
       end
-  
+
       def space_subdomain_authorize_url
         params = Rack::Utils.parse_nested_query(env['QUERY_STRING'])
         if (subdomain = params['cobot_space_subdomain'])
@@ -40,7 +42,7 @@ module OmniAuth
       end
 
       extra do
-        {:raw_info => raw_info}
+        { raw_info: raw_info }
       end
 
       def raw_info
