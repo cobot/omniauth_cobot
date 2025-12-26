@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ['>=2.7', '<4']
 
-  s.add_dependency 'omniauth-oauth2', '~>1.8.0'
+  s.add_dependency 'omniauth-oauth2', '~>1.8'
 
   s.files         = `git ls-files`.split("\n")
   # s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
