@@ -33,5 +33,5 @@ jobs:
         with:
           persist-credentials: false
       - name: Release gem
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         uses: rubygems/release-gem@v1
