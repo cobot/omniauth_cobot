@@ -9,12 +9,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     strategy:
       fail-fast: false
       matrix:
         ruby: ["4.0", "3.4", "3.3"]
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -22,3 +27,6 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: bundle exec rake
+      - name: Release gem
+        # if: github.ref == 'refs/heads/main'
+        uses: rubygems/release-gem@v1
