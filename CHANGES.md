@@ -1,7 +1,7 @@
-# 0.3.0
+# 1.0.0
 
 - Add support for Ruby v4
-- Drop support for EOL Rubies (< 3.2)
+- Drop support for EOL Rubies (< 3.3)
 
 # 0.2.0
 
