@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.version     = OmniAuth::Cobot::VERSION
   s.platform    = Gem::Platform::RUBY
 
-  s.required_ruby_version = ['>=2.7', '<4']
+  s.required_ruby_version = ['>=3.2', '<5']
 
   s.add_dependency 'omniauth-oauth2', '~>1.8'
 
